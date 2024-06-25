@@ -33,4 +33,4 @@ Make sure to install DFS Replication in both server. Click "Roles and Features" 
 - Jika tidak muncul, coba restart Hub Servernya.
 
 Referensi:
-[DFS Replication](https://mshub.co.uk/how-to-configure-dfs-replication-setup-dfs-share/)
+- [DFS Replication](https://mshub.co.uk/how-to-configure-dfs-replication-setup-dfs-share/)
