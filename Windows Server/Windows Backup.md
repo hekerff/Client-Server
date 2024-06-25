@@ -25,6 +25,11 @@ Lalu "Next" sampai ke Mars🐨💀.
 - Selanjutnya Klik **Add Items** untuk menambahkan Folder/File yang ingin kita backup.
 - Selanjutnya pilih **Remote Shared Folder**
 - Lalu pada Location:\\Nama Komputer Target Backup\Nama Folder yang sudah di konfigurasi menjadi Shared,
-  Contoh: \\REPLI\Backup
+  Contoh: \\\REPLI\Backup
   ![china-baik](https://github.com/hekerff/Client-Server/assets/159868331/a0216a08-f488-48ad-a716-d583d2dfcb86)
-- 
+- "Next" --> "Backup"
+**DONE**
+### Pengujian
+Pengujian dapat dilakukan dengan cara menghapus file yang ada dalam Folder yang sudah dibackup lalu **direcover**
+
+![Recover](https://github.com/hekerff/Client-Server/assets/159868331/2cee6140-da22-4272-9137-643e2d29c702)
