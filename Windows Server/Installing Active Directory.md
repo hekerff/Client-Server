@@ -11,3 +11,4 @@ Pada menu dashboard click pada tulisan "Add Roles and Features". Click next samp
 ### Step 3 - Choose the roles
 Centang pada pilihan "Active Directory Domain Services" ==> Click Add Feature ==> Next ==> Next ==> Install.
 ![Screenshot 2024-06-25 131922](https://github.com/hekerff/ITNSA-2024/assets/159868331/a46ff9ab-e31b-4150-bc6f-5c4c23420747)
+Tunggu sampai installasi selesai
