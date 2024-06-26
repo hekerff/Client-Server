@@ -74,3 +74,6 @@ Nanti akan diperlihatkan informasi dari file .csr | Pastikan informasi tersebut 
 - Setelah selesai, file yang sudah ditanda tangani akan berubah dari .csr menjadi .crt
 - File tersebut disimpan dalam folder /pki/issued/.
 - Kirim file tersebut ke server yang membutuhkan.
+
+**Referensi**
+- [Creating a Certificate Authority](https://medium.com/@martin.hodges/creating-a-ca-with-easyrsa-on-debian-12-59aa6936fea2)
