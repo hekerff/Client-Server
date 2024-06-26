@@ -77,7 +77,7 @@ server {
         }
 }
 ```
-**Setelah itu buat User dan Password untuk Login menggunakan htpasswd
+**Setelah itu buat User dan Password untuk Login menggunakan htpasswd**
 ```bash
 htpasswd -c /etc/nginx/.user Username #bebas
 ```
