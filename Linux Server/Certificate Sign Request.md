@@ -9,6 +9,8 @@ apt install openssl
 ```bash
 openssl req -new -nodes -out example.csr -newkey rsa:2048 -keyout example.key
 ```
+Nanti akan diminta informasi seperti ini... isi yang diperlukan saja
+![certi](https://github.com/hekerff/Client-Server/assets/159868331/16a11f09-45ca-4bf3-89b4-3906b161738c)
 - Nanti akan muncul 2 file: example.csr & example.key.
 - Kedua file tersebut akan muncul di folder di mana kita sedang berada.
 - example.csr, hanya file ini saja yang akan dikirim ke CA untuk ditanda tangani.
