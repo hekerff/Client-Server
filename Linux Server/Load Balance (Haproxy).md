@@ -66,4 +66,5 @@ backend radeon-backend  <--- #nama nya disamakan sama yang diatas
 ### DONE - TESTING TIME :)
 Pengujian dapat dilakukan dengan mencoba mengakses Web Server lalu coba dengan **Refresh** web tersebut berkali - kali, jika konfigurasi berhasil maka tampilan web akan berubah-ubah.
 Ini karena Algoritma Roundrobin yang membagi traffic ke 2 server (Left & Right).
+
 https://github.com/hekerff/Client-Server/assets/159868331/8e9f0d2a-baf1-4c1f-b838-9cf55b866ab3
