@@ -72,4 +72,10 @@ Save File & Restart the Service.
   **Deskripsi**: Mengatur header X-Forwarded-Proto dengan skema permintaan (HTTP atau HTTPS).
 
   **Fungsi**: Menginformasikan server backend apakah permintaan asli dari klien dilakukan melalui HTTP atau HTTPS. Ini berguna untuk pengaturan logika aplikasi atau redirect yang tergantung pada protokol yang digunakan oleh klien.
+
+- upstream backend_servers : Ini adalah command untuk kita mendefinisikan backend web server kita, sehingga Proxy Server Server tau alamat web server kita.
+- least_conn : Ini adalah protokol untuk melakukan Loud Balancing antara 2 Web Server ( optional )
+- server : Untuk mendefinisikan alamat web server kita.
 ---
+### PENGUJIAN
+Pengujian dapat dilakukan di Client dengan cara mencoba mengakses websitenya, masukan IP/sub-domain dari Reverse Proxy Server kita pada kolom pencaharian di Browser. www.ikn.com atau 10.10.0.1
