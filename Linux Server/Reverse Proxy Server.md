@@ -78,4 +78,4 @@ Save File & Restart the Service.
 - server : Untuk mendefinisikan alamat web server kita.
 ---
 ### PENGUJIAN
-Pengujian dapat dilakukan di Client dengan cara mencoba mengakses websitenya, masukan IP/sub-domain dari Reverse Proxy Server kita pada kolom pencaharian di Browser. www.ikn.com atau 10.10.0.1
+Pengujian dapat dilakukan di Client dengan cara mencoba mengakses websitenya, masukan IP/sub-domain dari Reverse Proxy Server kita pada kolom pencarian di Browser. www.ikn.com atau 10.10.0.1
