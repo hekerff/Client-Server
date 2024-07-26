@@ -1,4 +1,4 @@
-## How to Create Certificate Authority
+## How to Create Certificate Authority Using Easy-RSA
 ### Requirements before creating Certificate Authority
 - IP Address sudah terkonfigurasi
 - Hostname sudah terkonfigurasi
