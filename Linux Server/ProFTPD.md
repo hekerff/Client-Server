@@ -11,7 +11,7 @@ Ya seperti biasa, install package nya dolo
 ```bash
 apt install proftpd -y
 ```
-### Step 2 - Configure the Configuration File
+### Step 2 - Edit the Configuration File
 Ya selanjutnya kita perlu melakukan perubahan sedikit pada file konfigurasi dari proftpd-nya.
 ```bash
 sudo nano /etc/proftpd/proftpd.conf
