@@ -1,5 +1,5 @@
 ## Configure ProFTPD
-### Requirements before configuring Static DHCP Lease
+### Requirements before configuring Proftpd
 - IP Address sudah terkonfigurasi
 - Hostname sudah terkonfigurasi
 - Pastikan sudah memakai user **root**
