@@ -5,7 +5,8 @@
 - Pastikan sudah memakai user **root**
 ---
 ### Pendahuluan
-Saya akan melakukan konfigurasi File Server menggunakan ProFTPD karena katanya lebih mudah and simpel so lets goo
+Saya akan melakukan konfigurasi File Server menggunakan ProFTPD karena katanya lebih mudah and simpel so lets gooo
+---
 ### Step 1 - Installing Package
 Ya seperti biasa, install package nya dolo
 ```bash
