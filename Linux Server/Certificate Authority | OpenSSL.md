@@ -27,3 +27,20 @@ openssl req -x509 -new -nodes -out root.crt -keyout root.key
 - Locality Name: Singaraja --> Kota
 Untuk Selanjutnya isi sendiri bebas. Setelah selesai akan muncul 2 File yaitu **root.crt dan root.key**
 
+**Sudah Selesai :)**, tapi akan saya lanjutkan sampai membuat dan menandatangani sebuah Certificate yang akan digunakan pada Server nanti.
+
+### Step 3 - Create and Sign a Certificate
+Yang pertama kita perlu membuat file .csr terlebih dahulu yang nanti akan ditandatangani oleh Root Certificatenya. Contoh saya akan buat untuk layanan web.
+```bash
+openssl req -new -nodes -out www.csr -newkey -newkey rsa:2048 -keyout www.key
+```
+Sebelum menandatangani certificatenya, jika file .csr tersebut berada diluar server CA maka perlu dikirim ke Server CA terlebih dahulu menggunakan scp.
+
+Jika sudah langsung saja kita tandatangani.
+```bash
+openssl x509 -req -CA root.crt -CAkey root.key -set_serial 01 -in www.csr -out www.crt
+```
+Setelah selesai, maka file yang tadinya berupa .csr sekarang menjadi **www.crt**
+
+### Selesai
+Sudah selesai dan Certificate sudah siap digunakan.
