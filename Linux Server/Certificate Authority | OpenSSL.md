@@ -32,7 +32,7 @@ Untuk Selanjutnya isi sendiri bebas. Setelah selesai akan muncul 2 File yaitu **
 ### Step 3 - Create and Sign a Certificate
 Yang pertama kita perlu membuat file .csr terlebih dahulu yang nanti akan ditandatangani oleh Root Certificatenya. Contoh saya akan buat untuk layanan web.
 ```bash
-openssl req -new -nodes -out www.csr -newkey -newkey rsa:2048 -keyout www.key
+openssl req -new -nodes -days 365 -out www.csr -keyout www.key
 ```
 Sebelum menandatangani certificatenya, jika file .csr tersebut berada diluar server CA maka perlu dikirim ke Server CA terlebih dahulu menggunakan scp.
 
