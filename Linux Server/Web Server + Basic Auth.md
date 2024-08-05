@@ -22,7 +22,7 @@ nano /var/www/radeon/index.html
 <!DOCTYPE html>
 <html>
 <head>
-  <title> HAI </html>
+  <title> HAI </title>
 </head>
 <body>
   <h1> Web Server </h1>
