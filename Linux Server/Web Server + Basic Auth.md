@@ -70,8 +70,8 @@ server {
         listen 80;
         server_name www.YourDomain.com;
         location / {
-              auth_basic "Restricted"
-              auth_basic_user_file /etc/nginx/.radeon
+              auth_basic "Restricted";
+              auth_basic_user_file /etc/nginx/.radeon;
               root /var/www/radeon;
               index index.html;
         }
