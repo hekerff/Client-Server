@@ -34,7 +34,7 @@ Sekarang kita buat directory untuk menaruh File HTML nya, lalu kita buat file HT
     content: "<html><body><h1> HELLO WORLD </h1></body></html>"
     dest: C:\inetpub\wwwroot\Website\index.html
 ```
-### Step 5 - Create New Website
+### Step 4 - Create New Website
 Sekarang membuat Website baru
 ```yml
 - name: Create New Website
