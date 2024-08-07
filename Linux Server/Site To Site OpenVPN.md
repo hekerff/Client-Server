@@ -1,5 +1,5 @@
 ## Konfigurasi OpenVPN Site to Site
-### Requirements before configuring Failover
+### Requirements before configuring OpenVPN Site To Site
 - IP Address sudah terkonfigurasi
 - Hostname sudah terkonfigurasi
 - Pastikan sudah memakai user **root**
