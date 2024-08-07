@@ -4,6 +4,7 @@
 - Hostname sudah terkonfigurasi
 - Pastikan sudah memakai user **root**
 - 2 Server Linux
+
 Dalam konfigurasi kali akan membutuhkan setidaknya 2 Server, dan untuk versi OpenVPN nya adalah versi 3.
 ---
 ### Pendahuluan
