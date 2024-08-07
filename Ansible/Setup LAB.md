@@ -4,7 +4,7 @@ Pada setup LAB Ansible kali ini, saya akan membuat beberapa konfigurasi ansible 
 ### 1 - Membuat File Credential untuk Linux & Windows
 **LINUX**:
 Kita buat sebuah file dengan nama bebas, saya akan beri nama lin_cred agar mudah diingat.
-```ini
+```yaml
 ansible_ssh_user: User
 ansible_ssh_pass: Password
 ansible_sudo_pass: Password_sudo
