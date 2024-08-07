@@ -6,6 +6,7 @@
 - 2 Server Linux
 
 Dalam konfigurasi kali akan membutuhkan setidaknya 2 Server, dan untuk versi OpenVPN nya adalah versi 3.
+
 ---
 ### Pendahuluan
 Pada konfigurasi ini menggunakan topologi 2 server saja, Server 1 dan Server 2, Server 1 akan menjadi Server dari VPN dan Server 2 akan menjadi Clientnya.
