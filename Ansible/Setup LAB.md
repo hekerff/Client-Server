@@ -11,7 +11,7 @@ ansible_sudo_pass: Password_sudo
 ```
 **WINDOWS**:
 Selanjutnya kita buat file credential untuk Windows.
-```INI
+```yaml
 ansible_user: User
 ansible_password: Password
 
