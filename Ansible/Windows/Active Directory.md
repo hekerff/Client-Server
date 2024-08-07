@@ -38,3 +38,4 @@ tasks:
   win_reboot:
   when: promotion.reboot_required
 ```
+### Step 3 - Menambahkan OU
