@@ -22,3 +22,19 @@ ansible_connection: winrm
 ansible_winrm_transport: basic
 ansible_winrm_server_cert_validation: ignore
 ```
+### 2 - Melakukan Ecrypting & Decrypting file credential.
+Enkripsi dilakukan agar file credential kita tetap aman dari hacker😈.
+**Encrypt**
+```bash
+ansible-vault encrypt lin_cred
+Password: Password_kalian
+```
+**Decrypt**
+```bash
+ansible-vault decrypt lin_cred
+```
+### Mengatur file ansible.cfg
+Kita akan mengatuh ansible.cfg untuk membaca file yang berisi password, oleh karena itu kita perlu membuat file biasa yang berisi password dari vault kita.
+```cfg
+[defaults]
+ansible_password_file = 
