@@ -75,7 +75,7 @@ Buat file .yml baru. Yang pertama kita definisikan hosts ke localhost.
 ```
 ### Step 2 - Create Active Directory User
 ```yml
-- name: Melakukan Parsing pada File Json
+- name: Create Active Directory User
   hosts: windows
   gather_facts: false
   vars_files:
