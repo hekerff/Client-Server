@@ -3,6 +3,7 @@
 Saya mencoba membuat playbook untuk melakukan parsing pada file json, yang nantinya akan digunakan untuk membuat Active Directory User.
 ### Alur Melakukan Parsing
 (1) Langkah Pertama: Kita membuat playbook untuk localhost (control node), didalam playbook tersebut kita akan melakukan parsing file json lalu menyimpan hasil parsingan ke dalam sebuah file baru.
+
 (2) Langkah kedua: Buat tasks baru pada playbook yang sama, atau buat pada playbook bar(bowlehh), dan definisikan file yang telah kita parsing pada **vars_files**
 
 Langsung kita gaskan praktekan dan untuk file json yang akan diparsing isinya seperti ini
@@ -48,3 +49,45 @@ Langsung kita gaskan praktekan dan untuk file json yang akan diparsing isinya se
 }
 ```
 ### Step 1 - Parsing file json
+Buat file .yml baru. Yang pertama kita definisikan hosts ke localhost.
+- Baca file json menggunakan module **slurp**
+- lalu Decode dan kita parsing menggunakan module **set_fact**
+- Setelah itu kita simpan hasilnya ke sebuah file baru menggunakan module **copy**
+```yml
+- name: Melakukan Parsing pada File Json
+  hosts: localhost
+  gather_facts: false
+
+  tasks:
+  - name: Read JSON File
+    slurp:
+      path: /Folder/file.json
+    register: customers_json
+
+  - name: Decoding and Parsing
+    set_fact:
+        customers: "{{ customers_json.content | b64decode | from_json }}"
+
+ - name: Save parsed json file to a new file
+   copy:
+     content: "{{ customers | to_nice_json }}"
+     dest: /Folder/parsed.json
+```
+### Step 2 - Create Active Directory User
+```yml
+- name: Melakukan Parsing pada File Json
+  hosts: windows
+  gather_facts: false
+  vars_files:
+  - '/data/ansible/.win_cred'
+  - '/Folder/parsed.json'
+
+  tasks:
+  - name: Create User
+    win_domain_user:
+        name: "{{ item.username }}
+        password: "{{ item.password }}
+        state: present
+    loop: "{{ customers }}"
+```
+**DONE**
