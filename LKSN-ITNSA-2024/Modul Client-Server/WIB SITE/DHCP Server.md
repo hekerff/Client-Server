@@ -15,3 +15,6 @@ host LINSRV2 {
       hardware ethernet(mac address client);
       fixed-address 10.10.10.20;
 }
+```
+Setelah itu restart service dan pada LINSRV2, konfigurasi interface menjadi DHCP.
+### DONE
