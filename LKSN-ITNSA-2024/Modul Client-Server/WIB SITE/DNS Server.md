@@ -10,9 +10,9 @@ apt install bind9 dnsutils
 Lakukan konfigurasi DNS Server basic seperti biasa.
 ![FORWARD](https://github.com/user-attachments/assets/7c9e3655-2f78-4437-bd91-004e3f8ae087)
 ### Step 3 - Configure Forwarder
-edit file pada /etc/bind/named.conf.option, lalu lakukan perubahan seperti ini.
+Edit file pada /etc/bind/named.conf.option, lalu lakukan perubahan seperti ini.
 
-nanti gua isi gambar nya.
+![lin_forward](https://github.com/user-attachments/assets/357f8d65-4c71-4abf-a55b-061db52cd28b)
 
 Setelah itu, restart servicenya.
 
