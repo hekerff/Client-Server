@@ -28,3 +28,12 @@ Buat directory di dalam folder C:\inetpub\ buat folder manager lalu buat file HT
 
 ## Reverse Proxy
 ### Konfigurasi Reverse Proxy di FW-WTIA
+Tugas selanjutnya adalah melakukan konfigurasi Reverse Proxy menggunakan NGINX di FW-WITA. Kita disuruh untuk mengaktifkan protokol HTTPS menggunakan Certificate yang telah dibikin tadi.
+### Step 1 - Setup
+- Install NGINX
+- Menyiapkan Certificate
+### Step 2 - Configuration
+Edit saja pada file /etc/nginx/sites-available/default. Hapus semuanya dan buat baru seperti berikut:
+![Reverse-Proxy](https://github.com/user-attachments/assets/88d29dfc-493a-4d35-9ab9-391a8289ec75)
+Save File, dan Restart Servicenya
+### DONE
