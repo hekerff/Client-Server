@@ -57,7 +57,7 @@ Setelah itu kita edit file
 ```bash
 nano /etc/nginx/sites-available/file
 ```
-![linsrv2_nginx](https://github.com/user-attachments/assets/506132d4-a1b7-4956-b709-98d5faf2cd7f)
+![linsrv_file](https://github.com/user-attachments/assets/a2e9ae14-4e69-42f3-83a6-75b1c3376a65)
 
 Untuk mengaktifkan Redirect dari HTTP ke HTTPS, tambahkan:
 
@@ -65,9 +65,9 @@ Untuk mengaktifkan Redirect dari HTTP ke HTTPS, tambahkan:
 
 dan untuk mengaktifkan HTTPS nya tambahkan seperti di tanda panah dalam server { listen 443 ssl.
 
-**Saya belum tahu maksud dari file server for directory /data/file/**
+**autoindex on;** 
 
-Jadi buat file HTML ngawour saja.
+Berfungsi untuk menampilkan isi dari directory /data/file/ | Sehingga ini menjadikan file.barat.id sebagai file server melalui web.
 
 ### Step 4 - Konfigurasi Basic Authentication
 Konfigurasinya menggunakan htpasswd
