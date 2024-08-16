@@ -17,3 +17,4 @@ backend barat-backend
         balance roundrobin
         server linsrv1 10.10.10.10:80 check
 ```
+Lalu save filenya dan restart service nya.
