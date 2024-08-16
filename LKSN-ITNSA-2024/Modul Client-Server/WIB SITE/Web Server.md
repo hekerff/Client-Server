@@ -57,7 +57,7 @@ Setelah itu kita edit file
 ```bash
 nano /etc/nginx/sites-available/file
 ```
-![linsrv_file](https://github.com/user-attachments/assets/a2e9ae14-4e69-42f3-83a6-75b1c3376a65)
+![file_serversss](https://github.com/user-attachments/assets/b91f0761-9bdc-428b-a201-2bafdb230cf4)
 
 Untuk mengaktifkan Redirect dari HTTP ke HTTPS, tambahkan:
 
