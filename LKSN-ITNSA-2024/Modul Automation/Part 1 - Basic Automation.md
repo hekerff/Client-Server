@@ -86,3 +86,24 @@ all:
       state: present
 ```
 ### Membuat playbook dns-config.yml
+```yml
+- name: Configure Listen On in DNS Service
+  hosts: linux
+  gather_facts: false
+  become: yes
+  vars_files:
+  - '/etc/ansible/.lin_cred'
+
+  tasks:
+
+  - name: Inserting line in file configuration
+    lineinfile:
+      path: /etc/bind/named.conf.options
+      line: "\tlisten-on { {{ ansible_host }}; };"
+      insertafter: "listen-on-v6"
+
+  - name: Restart Service
+    apt:
+      name: bind9
+      state: restarted
+```
