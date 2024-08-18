@@ -65,3 +65,24 @@ all:
     hostname:
         name: "{{ hostname }}"
 ```
+### Membuat Playbook dns-install.yml
+```yml
+- name: Installing DNS Service
+  hosts: linux
+  gather_facts: false
+  become: yes
+  vars_files:
+  - '/etc/ansible/.lin_cred'
+
+  tasks:
+  - name: Uninstalling dependencies
+    apt:
+      name: bind9-libs
+      state: absent
+
+  - name: Installing Bind9
+    apt:
+      name: bind9
+      state: present
+```
+### Membuat playbook dns-config.yml
