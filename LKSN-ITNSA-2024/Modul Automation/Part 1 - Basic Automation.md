@@ -103,7 +103,12 @@ all:
       insertafter: "listen-on-v6"
 
   - name: Restart Service
-    apt:
+    service:
       name: bind9
       state: restarted
 ```
+Untuk melihat apakah konfigurasi sudah berjalan dengan benar, ketikan command berikut:
+```bash
+netstat -tulnp | grep :53
+```
+**DONE**
