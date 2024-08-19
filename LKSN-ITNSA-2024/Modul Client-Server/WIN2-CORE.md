@@ -13,9 +13,49 @@ New-NetFirewallRule -Displayname "Allow-ICMP" -Protocol ICMPv4 -IcmpType 8 -Dire
 ```
 ---
 
+## Advance
 ### Partisi Disk
-
 Untuk Melihat List Available Disk
 ```powershell
 Get-Disk
+```
+### Initialize Disk
+Setelah kita sudah tau nomor dari disk yang ingin kita partisi, sekarang kita initialize terlebih dahulu.
+```powershell
+Initialize-Disk -Number 1 -PartitionStyle GPT
+```
+### Create Partition
+Setelah diinitialize kita akan partisi disk nya
+```powershell
+New-Partition -DiskNumber 1 -UseMaximumSize -DriveLetter G
+```
+### Format Partisi
+```powershell
+Format-Volume -DriveLetter G -FileSystem NTFS -NewFileSystemLabel "ISCSI"
+```
+### Verifikasi
+```powershell
+Get-Volume -DriveLetter G
+```
+
+## Konfigurasi ISCSI
+### Install Feature ISCSI Target
+```powershell
+Install-WindowsFeature -name FS-iSCSITarget-Server
+```
+### Create Virtual Disk
+```powershell
+New-IscsiVirtualDisk -Path "G:\iSCSIVirtualHarddisk.vhdx" -Size 5GB
+```
+### Create Target ISCSI
+```powershell
+New-IscsiServerTarget -TargetName "BACKUP-TG" -InitiatorIds "IQN:iqn.2024-08.com.example:WINSRV1"
+```
+### Adding Virtual Disk to the Target
+```powershell
+Add-IscsiVirtualDiskTargetMapping -TargetName "BACKUP-TG" -Path "G:\iSCSIVirtualHarddisk.vhdx"
+```
+### Verifikasi
+```powershell
+Get-IscsiServerTarget
 ```
