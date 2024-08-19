@@ -1,7 +1,4 @@
 ## Windows Server 2022 Core
-### Darurat
-Ya darurat
-
 ## Basic
 ### Mengganti Hostname
 di cmd.exe ketik angka 2 ==> Masukan Computer Name ==> Pilih yes jika ingin restart, No jika tidak
