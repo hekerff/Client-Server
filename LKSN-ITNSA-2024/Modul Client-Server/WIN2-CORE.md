@@ -14,6 +14,24 @@ New-NetFirewallRule -Displayname "Allow-ICMP" -Protocol ICMPv4 -IcmpType 8 -Dire
 ---
 
 ## Advance
+## Active Directory 
+### Join Domain
+```powershell
+Add-Computer -DomainName "lks2024.id" -Credential
+Restart-Computer
+````
+### Install ADDS
+```powershell
+Install-WindowsFeature -Name AD-Domain-Service -IncludeManagementTools
+```
+### Configure ADDS Domain Controller
+```powershell
+Import-Module ADDSDeployment
+
+Install-AddsDomainController -DomainName "lks2024.id" -Credential
+```
+Masukkan Credential
+## ISCSI
 ### Partisi Disk
 Untuk Melihat List Available Disk
 ```powershell
