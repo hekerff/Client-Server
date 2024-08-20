@@ -30,7 +30,18 @@ Import-Module ADDSDeployment
 
 Install-AddsDomainController -DomainName "lks2024.id" -Credential
 ```
-Masukkan Credential
+Masukkan Credential Administrator 
+### Restar Computer (Wajib)
+```powershell
+Restart-Computer
+```
+### Verifikasi
+```powershell
+Get-ADDomainController
+```
+
+Konfigurasi ADDS akan memudahkan untuk melakukan konfigurasi ISCSI.
+
 ## ISCSI
 ### Partisi Disk
 Untuk Melihat List Available Disk
