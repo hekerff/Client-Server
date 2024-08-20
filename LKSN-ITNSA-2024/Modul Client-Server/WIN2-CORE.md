@@ -28,9 +28,9 @@ Install-WindowsFeature -Name AD-Domain-Service -IncludeManagementTools
 ```powershell
 Import-Module ADDSDeployment
 
-Install-AddsDomainController -DomainName "lks2024.id" -Credential
+Install-AddsDomainController -DomainName "lks2024.id" -Credential (Get-Credential)
 ```
-Masukkan Credential Administrator 
+lalu masukkan username: Administrator@tengah.id lalu passwordnya
 ### Restar Computer (Wajib)
 ```powershell
 Restart-Computer
