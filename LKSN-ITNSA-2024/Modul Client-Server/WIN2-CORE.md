@@ -42,6 +42,8 @@ Get-ADDomainController
 
 Konfigurasi ADDS akan memudahkan untuk melakukan konfigurasi ISCSI.
 
+---
+
 ## ISCSI
 ### Partisi Disk
 Untuk Melihat List Available Disk
