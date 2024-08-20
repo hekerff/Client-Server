@@ -80,7 +80,7 @@ New-IscsiVirtualDisk -Path "G:\iSCSIVirtualHarddisk.vhdx" -Size 5GB
 ```
 ### Create Target ISCSI
 ```powershell
-New-IscsiServerTarget -TargetName "BACKUP-TG" -InitiatorIds "IQN:iqn.2024-08.com.example:WINSRV1"
+New-IscsiServerTarget -TargetName "BACKUP-TG" -InitiatorIds @("IPAddress:172.31.16.10")
 ```
 ### Adding Virtual Disk to the Target
 ```powershell
