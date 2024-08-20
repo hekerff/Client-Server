@@ -86,6 +86,12 @@ New-IscsiServerTarget -TargetName "BACKUP-TG" -InitiatorIds "IQN:iqn.2024-08.com
 ```powershell
 Add-IscsiVirtualDiskTargetMapping -TargetName "BACKUP-TG" -Path "G:\iSCSIVirtualHarddisk.vhdx"
 ```
+
+**Setelah itu kita Restart Service nya***
+```powershell
+Restart-Service -Name WinTarget
+```
+
 ### Verifikasi
 ```powershell
 Get-IscsiServerTarget
