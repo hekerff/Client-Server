@@ -30,7 +30,7 @@ int po1
 swit trunk enc dot1
 swit mod trunk
 ```
-**SWL3-1 & SWL3-2**
+**SWL3-1 & SWL3-2** Lacp
 ```bash
 int r g2/0-1
 channel-group 2 mode active -> 1, passive -> 2.
@@ -38,7 +38,7 @@ int po2
 swit trunk enc dot1
 swit mod trunk
 ```
-**SWL3-2 & SWL2-2**
+**SWL3-2 & SWL2-2** Cisco Proprietary
 ```bash
 int r g0/2-3
 channel-group 3 mode desirable -> swl3, auto -> swl2
