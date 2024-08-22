@@ -17,6 +17,8 @@ Pada tasks awal kita disuruh untuk melakukan installasi Web Server Apache2 lalu 
   vars_files:
   - '/etc/ansible/.lin_cred'
 
+
+
   tasks:
   - name: Install Apache2
     apt:
@@ -32,3 +34,4 @@ Pada tasks awal kita disuruh untuk melakukan installasi Web Server Apache2 lalu 
     service:
       name: apache2
       state: restarted
+```
