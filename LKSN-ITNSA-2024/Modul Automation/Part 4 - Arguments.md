@@ -23,4 +23,15 @@ Pada part 4 ini kita disuruh untuk melakukan 2 tugas saja yaitu:
       state: present
 ```
 ### Number 2
+```yml
+tasks:
+- name: Baca txt file
+  set_fact:
+     package: "{{ lookup('file', '/etc/ansible/packages.txt').splitlines() }}"
 
+- name: Install Packages
+  apt:
+   name: "{{ item }}"
+   state: present
+  loop: "{{ package }}"
+```
