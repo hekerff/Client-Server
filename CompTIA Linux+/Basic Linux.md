@@ -20,10 +20,14 @@ Contoh Command Bash:
 - cat = for view content of file
 - less = lebih bagus dari cat karena bisa discroll kalo file nya panjang
 - shutdown -h now
-- sudo su
+- sudo su = For entering sudoers or root user
+
 **Text Editor:**
 - vi(m)
 - nano
 - gedit
 
 Enaknya bash shell adalah history dari command yang sudah kita lakukan masih tersimpan. Dan bisa auto complete command dengan menggunakan TAB.
+
+### Man Pages
+**Man pages** (manual pages) adalah dokumentasi bawaan di sistem operasi berbasis Unix, termasuk Debian Linux, yang menyediakan informasi detail tentang perintah, program, fungsi library, file konfigurasi, dan berbagai aspek sistem lainnya. Man pages adalah sumber referensi penting untuk memahami penggunaan perintah dan fitur tertentu dalam sistem Linux.
