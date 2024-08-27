@@ -31,3 +31,13 @@ Enaknya bash shell adalah history dari command yang sudah kita lakukan masih ter
 
 ### Man Pages
 **Man pages** (manual pages) adalah dokumentasi bawaan di sistem operasi berbasis Unix, termasuk Debian Linux, yang menyediakan informasi detail tentang perintah, program, fungsi library, file konfigurasi, dan berbagai aspek sistem lainnya. Man pages adalah sumber referensi penting untuk memahami penggunaan perintah dan fitur tertentu dalam sistem Linux.
+
+Untuk mengakses **man** pages, Anda dapat menggunakan perintah **man** di terminal diikuti dengan nama perintah atau program yang ingin Anda pelajari.
+
+Contoh:
+```bash
+man ls
+```
+Selain itu kita bisa melihat dokumentasi bawaan di folder /usr/share/doc, dan untuk yang offline bisa di website https://tldp.org
+
+Jadi pada intinya, man pages lebih berguna dari source source yang lain, kalian bisa menggunakan --help tetapi itu sangat kurang jika terdapat banyak opsi dari command yang ingin kita cari dokumentasinya.
