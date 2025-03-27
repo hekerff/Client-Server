@@ -17,7 +17,7 @@ New-NetFirewallRule -Displayname "Allow-ICMP" -Protocol ICMPv4 -IcmpType 8 -Dire
 ## Active Directory 
 ### Join Domain
 ```powershell
-Add-Computer -DomainName "lks2024.id" -Credential
+Add-Computer -DomainName "lks2024.id" 
 Restart-Computer
 ````
 ### Install ADDS
