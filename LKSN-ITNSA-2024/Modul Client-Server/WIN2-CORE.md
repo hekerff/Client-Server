@@ -22,7 +22,7 @@ Restart-Computer
 ````
 ### Install ADDS
 ```powershell
-Install-WindowsFeature -Name AD-Domain-Service -IncludeManagementTools
+Install-WindowsFeature -Name AD-Domain-Services -IncludeManagementTools
 ```
 ### Configure ADDS Domain Controller
 ```powershell
