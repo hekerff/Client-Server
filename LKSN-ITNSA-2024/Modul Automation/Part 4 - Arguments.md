@@ -6,21 +6,39 @@ Pada part 4 ini kita disuruh untuk melakukan 2 tugas saja yaitu:
 
 ### Number 1
 ```yml
-- name: Add User in All Linux Host
+- name: bla bla ble blublu
   hosts: linux
   gather_facts: false
   become: yes
   vars_files:
-  - '/etc/ansible/.lin_cred'
+  - '/home/user/ansible/.lin_cred'
 
   tasks:
-  - name: Adding User Natuna
+  - name: Baca file username dan password
+    slurp:
+      src: /root/usernames.txt
+    register: user_file_raw
+    delegate_to: localhost
+
+  - name: Decode isi file usernames.txt
+    set_fact:
+      user_lines: "{{ user_file_raw.content | b64decode | split('\n') }}"
+
+  - name: Ambil user dan password, buang header + trim
+    set_fact:
+      user_list: >-
+        {{ user_lines[1:] | map('split', ',') | map('map', 'trim') | list }}
+
+  - name: Filter hanya baris yang valid
+    set_fact:
+      user_list: "{{ user_list | selectattr(1, 'defined') | list }}"
+
+  - name: Buat user dan set password
     user:
-      name: natuna
-      comment: natuna
-      password: "{{ 'Skills39' | password_hash('sha512')}}"
-      shell: /bin/bash
+      name: "{{ item.0 }}"
+      password: "{{ item.1 | password_hash('sha512', 'salt123') }}"
       state: present
+    loop: "{{ user_list }}"
 ```
 ### Number 2
 ```yml
