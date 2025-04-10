@@ -106,6 +106,41 @@ all:
       name: bind9
       state: restarted
 ```
+### Membuat playbook haproxy.yml
+```yml
+- name: Configure haproxy
+  hosts: linux
+  gather_facts: false
+  become: yes
+  vars_files:
+  - '/home/user/ansible/.lin_cred'
+
+  tasks:
+  - name: Install Haproxy
+    apt:
+      name: haproxy
+      state: present
+
+  - name: Configure the file
+    copy:
+      dest: /etc/haproxy/haproxy.cfg
+      content: |
+        defaults
+                mode http
+                timeout client 30000
+        
+        frontend http_front
+                bind *:8081
+                default_backend ansible_backend
+        
+        backend ansible_backend
+                server ansible 127.0.0.1:80 check
+
+  - name: Restart Service
+    service:
+      name: haproxy
+      state: restarted
+```
 ### Membuat playbook dns-config.yml
 ```yml
 - name: Configure Listen On in DNS Service
