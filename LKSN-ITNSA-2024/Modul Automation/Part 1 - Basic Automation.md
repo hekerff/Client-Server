@@ -90,6 +90,21 @@ all:
     apt:
       name: bind9
       state: present
+
+  - name: Setting listening server
+    copy:
+      dest: /etc/bind/named.conf.options
+      content: |
+        options {
+              directory "/var/cache/bind";
+              listen-on { {{ ansible_host }}; };
+              dnssec-validation auto;
+              auth-nxdomain no;
+            };
+  - name: Restart DNS
+    service:
+      name: bind9
+      state: restarted
 ```
 ### Membuat playbook dns-config.yml
 ```yml
