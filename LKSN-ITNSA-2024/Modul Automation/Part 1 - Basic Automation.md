@@ -81,29 +81,22 @@ all:
   - '/etc/ansible/.lin_cred'
 
   tasks:
-  - name: Uninstalling dependencies
+  - name: Install dnsmasq
     apt:
-      name: bind9-libs
-      state: absent
-
-  - name: Installing Bind9
-    apt:
-      name: bind9
+      name: dnsmasq
       state: present
 
-  - name: Setting listening server
+  - name: Konfigurasi dnsmasq untuk listen di IP tertentu
     copy:
-      dest: /etc/bind/named.conf.options
+      dest: /etc/dnsmasq.d/listen.conf
       content: |
-        options {
-              directory "/var/cache/bind";
-              listen-on { {{ ansible_host }}; };
-              dnssec-validation auto;
-              auth-nxdomain no;
-            };
-  - name: Restart DNS
+        interface=lo
+        listen-address={{ ansible_host }}
+        bind-interfaces
+
+  - name: Restart Service
     service:
-      name: bind9
+      name: dnsmasq
       state: restarted
 ```
 ### Membuat playbook haproxy.yml
