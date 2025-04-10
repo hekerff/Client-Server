@@ -10,28 +10,62 @@ Karena ini terlalu komplex maka setiap playbook akan saya bagi.
 Pada tasks awal kita disuruh untuk melakukan installasi Web Server Apache2 lalu disuruh untuk mengedit file default nya. Selanjutnya kita disuruh untuk membuat beberapa webpage untuk user user yang ada.
 ### Installasi and Configurasi File Default
 ```yml
-- name: Install and Configure Web Server Apache2
+- name: Configure Web Server
   hosts: linux
   gather_facts: false
   become: yes
   vars_files:
-  - '/etc/ansible/.lin_cred'
-
-
+  - '/home/user/ansible/.lin_cred'
 
   tasks:
-  - name: Install Apache2
+  - name: Install apache2
     apt:
       name: apache2
       state: present
 
-  - name: Configure File Default
+  - name: edit default html file
     copy:
-      content: "<html> <h1> Welcome {{ hostname }} </html> </h1>"
       dest: /var/www/html/index.html
+      content: "Welcome to {{ hostname }}"
 
-  - name: Restart Service
+  - name: restart apache2
     service:
       name: apache2
+      state: restarted
+```
+### Number 2
+```yml
+- name: Configure DNS Record
+  hosts: linux
+  gather_facts: false
+  become: yes
+  vars_files:
+  - '/home/user/ansible/.lin_cred'
+
+  tasks:
+  - name: Tambah record kalau dnsmasq terpasang
+    block:
+      - name: Baca file dnslist.txt
+        slurp:
+          src: /root/dnslist.txt
+        register: dnslist_raw
+        delegate_to: localhost
+
+      - name: Tulis ke /etc/dnsmasq.d/custom.conf
+        copy:
+          dest: /etc/dnsmasq.d/custom.conf
+          content: |
+            {% for line in dnslist_raw.content | b64decode | split('\n') %}
+            {% if line %}
+            address=/{{ line.split()[0] }}/{{ line.split()[-1] }}
+            {% endif %}
+            {% endfor %}
+        notify: restart dnsmasq
+    when: ansible_facts.packages['dnsmasq'] is defined
+
+  handlers:
+  - name: restart dnsmasq
+    service:
+      name: dnsmasq
       state: restarted
 ```
