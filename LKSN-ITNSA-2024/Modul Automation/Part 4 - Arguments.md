@@ -24,14 +24,27 @@ Pada part 4 ini kita disuruh untuk melakukan 2 tugas saja yaitu:
 ```
 ### Number 2
 ```yml
-tasks:
-- name: Baca txt file
-  set_fact:
-     package: "{{ lookup('file', '/etc/ansible/packages.txt').splitlines() }}"
+- name: Install packages from text list
+  hosts: linux
+  gather_facts: false
+  become: yes
+  vars_files:
+  - '/home/user/ansible/.lin_cred'
 
-- name: Install Packages
-  apt:
-   name: "{{ item }}"
-   state: present
-  loop: "{{ package }}"
+  tasks:
+
+  - name: Baca isi /root/packages.txt
+    slurp:
+      src: /root/packages.txt
+    register: packages_raw
+    delegate_to: localhost
+
+  - name: Ubah isi file jadi list
+    set_fact:
+      packages_list: "{{ packages_raw.content | b64decode | split('\n') | reject('equalto', '') | list }}"
+
+  - name: Install semua package dari file
+    apt:
+      name: "{{ packages_list }}"
+      state: present
 ```
