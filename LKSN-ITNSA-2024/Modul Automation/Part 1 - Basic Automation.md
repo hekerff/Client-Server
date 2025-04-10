@@ -61,6 +61,12 @@ all:
   - '/etc/ansible/.lin_cred'
 
   tasks:
+  - name: Adding new Hosts line
+    lineinfile:
+      path: /etc/hosts
+      line: |
+       {{ ansible_host }} {{ hostname }}
+
   - name: Change hostname
     hostname:
         name: "{{ hostname }}"
